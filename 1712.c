@@ -11,11 +11,11 @@ int main() {
 
 	scanf("%d %d %d", &fixed_cost, &variable_cost, &income);
 	
-	//런타임 에러
+	//맞았습니다
 	break_even_point = fixed_cost;
 	net_profit = income - variable_cost;
 
-	if (net_profit < 0) {
+	if (net_profit <= 0 ) {
 		printf("-1\n");
 	}
 	else {
