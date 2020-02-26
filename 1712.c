@@ -11,6 +11,7 @@ int main() {
 
 	scanf("%d %d %d", &fixed_cost, &variable_cost, &income);
 	
+	//시간 초과
 	break_even_point = fixed_cost;
 	if (variable_cost > income) {
 		printf("-1\n");
