@@ -11,18 +11,16 @@ int main() {
 
 	scanf("%d %d %d", &fixed_cost, &variable_cost, &income);
 	
-	//시간 초과
+	//런타임 에러
 	break_even_point = fixed_cost;
-	if (variable_cost > income) {
+	net_profit = income - variable_cost;
+
+	if (net_profit < 0) {
 		printf("-1\n");
 	}
 	else {
-		net_profit = income - variable_cost;
-		while (break_even_point >= 0) {
-			break_even_point = break_even_point - net_profit;
-			cnt++;
-		}
-		printf("%d\n", cnt);
+		cnt = break_even_point / net_profit;
+		printf("%d\n", cnt + 1);
 	}
 
 	return 0;
