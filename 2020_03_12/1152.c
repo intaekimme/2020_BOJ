@@ -14,13 +14,12 @@ int main() {
 		len++;
 	}
 
-
 	for (i = 0; str[i] != 0; i++) {
 		if (str[i] == 32) {
 			if (i == 0 && str[i] == 32) {
 				continue;
 			}
-			if (i == len - 2 && str[i] == 32) {
+			else if (i == len - 2 && str[i] == 32) {
 				continue;
 			}
 			else {
@@ -29,7 +28,25 @@ int main() {
 		}
 	}
 
-	printf("%d\n", cnt + 1);
+	//공백 하나만 입력받았을 때 : len = 2, cnt = 0 >>> 0
+	//문자 1개만 입력받았을 때 : len = 2, cnt = 0 >>> 1
+	//공백 하나, 단어 하나 : len > 2, cnt = 0; >>> 1
+	//그 외
+	if (str[0] == 32 && len == 2 && cnt == 0) {
+		printf("%d\n", cnt);
+	}
+	else if (str[0] != 32 && len == 2 && cnt == 0) {
+		cnt++;
+		printf("%d\n", cnt);
+	}
+	else if (len > 2 && cnt == 0) {
+		cnt++;
+		printf("%d\n", cnt);
+	}
+	else {
+		cnt++;
+		printf("%d\n", cnt);
+	}
 
 	return 0;
 }
