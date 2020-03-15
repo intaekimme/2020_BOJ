@@ -2,25 +2,23 @@
 #include <stdio.h>
 
 int main() {
-	int up = 0;
-	int down = 0;
-	int state = 0;
-	int goal = 0;
+	double up = 0;
+	double down = 0;
+	double goal = 0;
 	int day = 1;
 
-	scanf("%d %d %d", &up, &down, &goal);
-
-	while (state < goal) {
-		state += up;
-		if (state >= goal) {
-			printf("%d\n", day);
-		}
-		else {
-			state -= down;
-			day++;
-		}
+	scanf("%lf %lf %lf", &up, &down, &goal);
+	if (up >= goal) {
+		printf("%d\n", day);
 	}
-
+	else {
+		goal -= up - down;
+		goal = goal / (up - down);
+		
+		day = (int)(goal + 0.5);
+		printf("%d\n", day);
+	}
+	
 	return 0;
 
 }
